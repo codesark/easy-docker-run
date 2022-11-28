@@ -1,0 +1,28 @@
+version: '3'
+services:
+  postgresql:
+    image: postgres:15
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - postgres-net
+    ports:
+      - 5432:5432
+  pgadmin:
+    image: dpage/pgadmin4:6
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=postgres@pgdmin.org
+      - PGADMIN_DEFAULT_PASSWORD=postgres
+    networks:
+      - postgres-net
+    ports:
+      - 10081:80
+
+volumes:
+  postgres-data:
+networks:
+  postgres-net:
