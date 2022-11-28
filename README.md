@@ -1,4 +1,4 @@
-# Easy Docker Run Services
+# Easy Docker Run
 Docker Compose files and Docker Commands for quickly starting most commonly used services for development use. 
 
 ## PostgreSQL + PgAdmin
