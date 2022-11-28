@@ -1,5 +1,11 @@
 # PostgreSQL + PgAdmin (Docker Compose)
 
+- Host: localhost, postgres
+- Network: postgres-net 
+- Port: 5432
+- UI: http://localhost:10081
+- UI User: postgres@pgadmin.org | Password: postgres
+
 ## Create/Start
 ```shell
 # Start 
