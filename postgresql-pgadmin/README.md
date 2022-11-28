@@ -7,6 +7,7 @@
 - UI User: postgres@pgadmin.org | Password: postgres
 
 ## Create/Start
+### Create/Start
 ```shell
 # Start 
 docker-compose up
@@ -15,7 +16,7 @@ docker-compose up
 docker-compose up -d
 ```
 
-# Stop/Remove
+### Stop/Remove
 ```shell
 # Stop + Remove Networks
 docker-compose down

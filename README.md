@@ -24,7 +24,7 @@ docker run --name pgadmin -d -p 10081:80 \
     dpage/pgadmin4
 ```
 
-### Delete
+### Remove
 ```shell
 docker stop postgres
 docker stop pgadmin
