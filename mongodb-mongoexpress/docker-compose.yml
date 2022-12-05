@@ -1,0 +1,28 @@
+version: '3'
+services:
+  mongo:
+    image: mongo:5.0
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=toor
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - mongo-net
+    ports:
+      - 27017:27017
+  mongo-express:
+    image: mongo-express:0.54
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=root
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=toor
+      - ME_CONFIG_MONGODB_URL=mongodb://root:toor@mongo:27017
+    networks:
+      - postgres-net
+    ports:
+      - 10082:8081
+
+volumes:
+  mongo-data:
+networks:
+  mongo-net:
