@@ -1,0 +1,24 @@
+version: '3'
+services:
+  redis:
+    image: redis:7.0
+    command: redis-server --save 60 1 --loglevel warning
+    volumes:
+      - redis-data:/data
+    networks:
+      - redis-net
+    ports:
+      - 5432:5432
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    networks:
+      - redis-net
+    ports:
+      - 10083:8081
+
+volumes:
+  redis-data:
+networks:
+  redis-net:
