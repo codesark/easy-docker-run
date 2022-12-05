@@ -1,0 +1,24 @@
+version: '3'
+services:
+  elasticsearch:
+    image: elasticsearch:8.5.1
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+    networks:
+      - elasticsearch-net
+    ports:
+      - 5432:5432
+  kibana:
+    image: kibana:8.5.1
+    networks:
+      - elasticsearch-net
+    ports:
+      - 10084:80
+
+volumes:
+  elasticsearch-data:
+networks:
+  elasticsearch-net:
