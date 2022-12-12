@@ -1,37 +1,29 @@
 # Easy Docker Run
-Docker Compose files and Docker Commands for quickly starting most commonly used services for development use. 
+Docker Compose files for quickly starting most commonly used services for development use. 
 
-## PostgreSQL + PgAdmin
+## Services
 
-- Host: localhost, postgres
-- Network: postgres-net 
-- Port: 5432
-- UI: http://localhost:10081
-- UI User: postgres@pgadmin.org | Password: postgres
+- PostgreSQL + PgAdmin
+- MongoDB + Mongo Express
+- Redis + Redis Commander
+- Elasticsearch + Kibana
 
-### Create
-```shell
-docker network create postgres-net
-docker run --name postgres -d -p 5432:5432 \
-    --network=postgres-net \
-    -e POSTGRES_PASSWORD=postgres \
-    -v postgres-data:/var/lib/postgresql/data \
-    postgres:latest
-docker run --name pgadmin -d -p 10081:80 \
-    --network=postgres-net \
-    -e PGADMIN_DEFAULT_EMAIL=postgres@pgadmin.org \
-    -e PGADMIN_DEFAULT_PASSWORD=postgres \
-    dpage/pgadmin4
-```
+## Instructions
 
-### Remove
-```shell
-docker stop postgres
-docker stop pgadmin
-docker rm postgres
-docker rm pgadmin
-docker network rm postgres-net
-
-# Delete Volume (removes all data)
-docker volume rm postgres-data
-```
+- Make sure you have docker and docker-compose installed
+    - [Docker Desktop](https://docs.docker.com/get-docker/)
+- Clone the repo using git `git clone https://github.com/codesark/easy-docker-run.git`
+- Change the directory to cloned repo `cd easy-docker-run`
+- Depending upon which service you want to run, change to that directory
+  For Example 
+    - To start: Postgres + PgAdmin 
+       ```
+       cd postgresql-pgadmin
+       docker-compose up -d
+       ```
+      Above Commands will start configure and start the services using docker and docker compose
+    - To stop: Postgresql + PgAdmin
+       ```
+       cd postgresql-pgadmin
+       docker-compose down
+       ```
