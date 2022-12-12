@@ -28,3 +28,7 @@ Docker Compose files for quickly starting most commonly used services for develo
        cd postgresql-pgadmin
        docker-compose down
        ```
+ 
+ ## Contribution
+ 
+ Feel free to add more services to the repo by forking the repo or creating a pull request directly. 
