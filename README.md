@@ -15,6 +15,7 @@ Docker Compose files for quickly starting most commonly used services for develo
 - Clone the repo using git `git clone https://github.com/codesark/easy-docker-run.git`
 - Change the directory to cloned repo `cd easy-docker-run`
 - Depending upon which service you want to run, **change to that directory** and run `docker-compose up -d` \
+  and to stop run 'docker-compose down' or `docker compose down -v` to also remove the volumes \
   For Example:
     - To start: Postgres + PgAdmin 
        ```
