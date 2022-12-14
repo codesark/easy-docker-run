@@ -3,10 +3,12 @@ Docker Compose files for quickly starting most commonly used services for develo
 
 ## Services
 
-- PostgreSQL + PgAdmin
-- MongoDB + Mongo Express
-- Redis + Redis Commander
-- Elasticsearch + Kibana
+1. PostgreSQL + PgAdmin
+2. MongoDB + Mongo Express
+3. Redis + Redis Commander
+4. Elasticsearch + Kibana
+5. RabbitMQ + Management
+6. Neo4j + Management
 
 ## Instructions
 
@@ -28,7 +30,7 @@ Docker Compose files for quickly starting most commonly used services for develo
        cd postgresql-pgadmin
        docker-compose down
        ```
- 
- ## Contribution
- 
- Feel free to add more services to the repo by forking the repo or creating a pull request directly. 
+
+## Contribution
+
+Feel free to add more services to the repo by forking the repo or creating a pull request directly. 
